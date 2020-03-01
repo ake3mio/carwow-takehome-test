@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {withProduct, withProductPromotions, WithProductPromotionsProps, WithProductProps} from '../../core/products';
 import './index.scss';
 import {WithRouteParams} from "../../core/router";
-import classNames from 'classnames';
 import Select from "../../components/Select";
 import ButtonLink from "../../components/ButtonLink";
 import RRPPrice from "../../components/RRPPrice";
@@ -35,10 +34,6 @@ type InternalProps =
 
 const Car = ({product: {loading, result}, productPromotions}: InternalProps) => {
 
-    const classes = classNames('Car page', {
-        'Car--loading': !loading
-    });
-
     useEffect(() => {
 
         if (result) {
@@ -58,7 +53,7 @@ const Car = ({product: {loading, result}, productPromotions}: InternalProps) => 
     ] : [];
 
     return (
-        <div className={classes}>
+        <div className="Car page">
 
             <FullPageLoader active={!loading}/>
 
@@ -132,6 +127,7 @@ const Car = ({product: {loading, result}, productPromotions}: InternalProps) => 
                             results={productPromotions.results}
                             loading={productPromotions.loading}
                             title="Other Deals"
+                            externalLink={true}
                         />
                     </>
                 )

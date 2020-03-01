@@ -11,7 +11,8 @@ const Button = ({children, external, ...rest}: ButtonProps) => {
     const onClick = (e) => {
         if (!external) {
             e.preventDefault();
-            window.history.pushState({path: rest.href}, "", rest.href)
+            window.history.pushState({path: rest.href}, "", rest.href);
+            window.scrollTo(0, 0);
         }
     };
 

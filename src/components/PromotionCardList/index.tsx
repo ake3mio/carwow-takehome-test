@@ -7,11 +7,12 @@ type PromotionCardListProps = {
     results: carwow.ProductPromotion[]
     loading: boolean,
     title?: string,
+    externalLink?: boolean,
 }
 
 const fallbackArray = createArray(4);
 
-const PromotionCardList = ({results, loading, title}: PromotionCardListProps) => {
+const PromotionCardList = ({results, loading, title, externalLink}: PromotionCardListProps) => {
     const promotions = loading ? fallbackArray : results;
     return (
         <div className="PromotionCardList">
@@ -24,6 +25,7 @@ const PromotionCardList = ({results, loading, title}: PromotionCardListProps) =>
                         key={index}
                         {...promotion}
                         loading={loading}
+                        externalLink={externalLink}
                     />
                 ))}
             </div>

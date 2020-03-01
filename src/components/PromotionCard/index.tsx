@@ -7,7 +7,7 @@ import ButtonLink from '../ButtonLink';
 import './index.scss';
 import ProductPhoto from "../ProductPhoto";
 
-type PromotionCardProps = CardProps & carwow.ProductPromotion & carwow.Loadable;
+type PromotionCardProps = {externalLink?: boolean} & CardProps & carwow.ProductPromotion & carwow.Loadable;
 
 const PromotionCard = (props: PromotionCardProps) => {
 
@@ -19,7 +19,8 @@ const PromotionCard = (props: PromotionCardProps) => {
         rrp,
         summary,
         id,
-        loading
+        loading,
+        externalLink
     } = props;
 
     const classes = classnames("PromotionCard", className, {
@@ -45,7 +46,7 @@ const PromotionCard = (props: PromotionCardProps) => {
 
             <div className="PromotionCard__footer">
                 <RRPPrice rrp={rrp}/>
-                <ButtonLink href={href}>Read Review</ButtonLink>
+                <ButtonLink href={href} external={externalLink}>Read Review</ButtonLink>
             </div>
 
         </Card>
