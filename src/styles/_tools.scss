@@ -1,0 +1,9 @@
+@import "variables";
+
+@function size($multiplier: 1) {
+  @return $unit * $multiplier * 1px;
+}
+
+@function color($color) {
+  @return map_get($colors, $color)
+}

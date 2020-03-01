@@ -1,0 +1,21 @@
+$unit: 16;
+$radius: 5px;
+
+$colors: (
+        primary: #00a4ff,
+        white: #ffffff,
+        action: #2ecc71,
+        muted: #666,
+        black: #010101,
+        light: #ccc,
+        bg: #f6f7fa,
+);
+
+$breakpoints: (
+        sm: 576px,
+        md: 720px,
+        lg: 960px,
+        xl: 1500px,
+);
+
+$header-height: 60px;

@@ -1,0 +1,40 @@
+@import "../../styles/mixins";
+@import "../../styles/tools";
+
+.PromotionCardList {
+  > .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: size();
+  }
+
+  &__title {
+    text-align: center;
+    margin: 0 auto;
+    padding: size() size() 0;
+    max-width: map_get($breakpoints, xl);
+  }
+
+  .PromotionCard {
+    $gutter: 16px;
+
+    width: 100%;
+    margin-bottom: $gutter;
+    @include media-up(sm) {
+
+      $width: 100  / 2 * 1%;
+      width: calc(#{$width} - #{$gutter});
+      margin: $gutter / 2;
+    }
+
+    @include media-up(lg) {
+      $width: 100  / 3 * 1%;
+      width: calc(#{$width} - #{$gutter});
+    }
+
+    @include media-up(xl) {
+      $width: 100  / 4 * 1%;
+      width: calc(#{$width} - #{$gutter});
+    }
+  }
+}

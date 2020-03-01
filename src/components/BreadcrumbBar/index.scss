@@ -1,0 +1,59 @@
+@import "../../styles/mixins";
+@import "../../styles/tools";
+
+.BreadcrumbBar {
+  background: color(muted);
+  width: 100%;
+  height: 40px;
+
+  &__list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: size(0.5);
+    height: 100%;
+  }
+
+  &__crumb {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: size(0.5);
+    color: color(white);
+    &:after {
+      content: "\00BB";
+      position: relative;
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+  }
+
+  &__crumb a {
+    display: flex;
+    padding-right: size(0.5);
+    font-size: size(0.85);
+    color: inherit;
+    font-weight: bold;
+    cursor: default;
+
+    &[href] {
+      font-weight: normal;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .container {
+    height: 100%;
+    min-height: auto;
+    padding: 0;
+  }
+}

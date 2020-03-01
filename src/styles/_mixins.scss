@@ -1,0 +1,55 @@
+@import "variables";
+
+@mixin aspect-ratio($width, $height, $child: "> .content") {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  #{$child} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin loading() {
+  position: relative;
+  overflow: hidden;
+  background: #dddfe2;
+  border: 2px solid #dddfe2;
+  opacity: .2;
+
+  * {
+    visibility: hidden;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: #dddfe2;
+    background-image: linear-gradient(to left, #dddfe2, #d3d4d6, #c9c9cb, #bebebf, #b4b4b4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    animation: 1.5s left-to-right ease-in-out infinite;
+  }
+}
+
+@mixin media-up($name) {
+
+  $breakpoint: map_get($breakpoints, $name);
+
+  @media screen and (min-width: #{$breakpoint}) {
+    @content;
+  }
+
+}

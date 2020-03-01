@@ -1,44 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Akeem's Front-end tech test for carwow
 
-## Available Scripts
+In this tech test I have built a car list view and a car detail view. Everything is responsive.
 
-In the project directory, you can run:
+I have integrated with the provided apis hosted on heroku for each of the views using client-side ajax requests.
+As the apis on heroku take a bit of time to warm up, I have added fallback loading for some of the content.
+Also, there is some basic offline support functionality provided from a service worker (if supported in a browser)
 
-### `npm start`
+## Home Page  
+On the home page a responsive grid list has been implemented with product card components that have fallback loading content.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When you click on to a product image or a "read review" button, the window history api is used to push state to a new path.  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Product Details Page  
+As the page is waiting for a response from the product api a full page loader is displayed to let the user know something is happening.
 
-### `npm test`
+When the content is loaded you are able to see:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- the details of the selected car
+- breadcrumbs so you can easily navigate to the home page
+- the product grid list to help promote cross selling of products
 
-### `npm run build`
+If I was to do these feature for production purposes, I would:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Add unit tests and bdd tests
+- Prefetch some of the assets
+- Improve the offline support on the product detail view
+- CI/CD for deployments
+- Better structure for the global css

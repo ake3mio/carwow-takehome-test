@@ -1,0 +1,62 @@
+@import "../../styles/mixins";
+@import "../../styles/tools";
+
+.PromotionCard {
+
+  $root: &;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__info {
+    position: relative;
+    padding: size();
+    flex-grow: 1;
+  }
+
+  &__footer {
+    position: relative;
+    border-top: 1px solid color(light);
+    padding: size();
+  }
+
+  .RRPPrice {
+    margin-bottom: size(0.25);
+  }
+
+  &--loading {
+    max-height: 650px;
+    .ProductPhoto {
+      @include loading;
+    }
+
+
+    .CarModelBrand {
+      width: 40%;
+      min-height: 40px;
+      @include loading;
+    }
+
+    .PromotionCard__info p {
+      @include loading;
+      min-height: 60px;
+
+      @include media-up(md) {
+        min-height: 120px;
+      }
+    }
+
+    .RRPPrice {
+      @include loading;
+      color: transparent;
+      width: 50%;
+    }
+
+    .ButtonLink {
+      @include loading;
+      color: transparent;
+    }
+  }
+
+}

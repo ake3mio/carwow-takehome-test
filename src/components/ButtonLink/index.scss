@@ -1,0 +1,23 @@
+@import "../../styles/mixins";
+@import "../../styles/tools";
+@import "../../styles/variables";
+
+.ButtonLink {
+
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: size();
+  cursor: pointer;
+  font-weight: bold;
+  background: color(action);
+  color: color(white);
+  border-radius: $radius;
+  text-decoration: none;
+
+  &:hover, &:active {
+    background: darken(color(action), 20%);
+  }
+
+}

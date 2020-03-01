@@ -1,0 +1,12 @@
+@import "../../styles/tools";
+@import "../../styles/variables";
+
+.Header {
+  background-color: color(primary);
+  position: relative;
+  padding: size();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $header-height;
+}

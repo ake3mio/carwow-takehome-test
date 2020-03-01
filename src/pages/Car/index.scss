@@ -1,0 +1,100 @@
+@import "../../styles/mixins";
+@import "../../styles/tools";
+
+.Car {
+  $root: &;
+  position: relative;
+  min-height: 100vh;
+
+
+  @include media-up(lg) {
+
+    > .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ProductPhoto {
+      flex-basis: 45%;
+    }
+
+    &__info {
+      padding: 0 size();
+      flex-basis: 55%;
+    }
+
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    margin: size() 0;
+
+    @include media-up(sm) {
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+  }
+
+  &__content-section {
+    padding: size(0.5);
+
+    &:first-child {
+      width: 100%;
+
+      @include media-up(sm) {
+        width: auto;
+      }
+    }
+  }
+
+  &__content-title {
+    margin: size(0.25) 0;
+    color: color(muted);
+  }
+
+  &__rating {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 size(0.5);
+    border: 1px solid color(muted);
+    border-radius: $radius;
+
+    #{$root}__content-title {
+      margin-right: size(0.125);
+    }
+  }
+
+  &__color-option {
+    display: flex;
+    align-items: center;
+  }
+
+  &__color {
+    width: 100px;
+    height: size();
+    display: block;
+    border: 1px solid color(light);
+  }
+
+  &__main-container {
+    .ProductPhoto__image {
+      opacity: 0;
+      transform: translate3d(10px, 10px, 0);
+      animation: nudge-in-up 500ms ease-out forwards;
+      animation-delay: 550ms;
+    }
+  }
+
+  .BreadcrumbBar {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    z-index: 2;
+  }
+}

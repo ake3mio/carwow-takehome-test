@@ -1,0 +1,9 @@
+@import "../../styles/tools";
+@import "../../styles/variables";
+
+.Card {
+  position: relative;
+  box-shadow: 0 3px 10px rgba(black, .3);
+  border-radius: $radius;
+  background: color(white);
+}

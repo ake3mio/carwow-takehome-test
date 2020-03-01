@@ -1,0 +1,36 @@
+@import "../../styles/tools";
+@import "../../styles/variables";
+
+.CircleRating {
+  position: relative;
+
+  &__background-circle,
+  &__foreground-circle {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    stroke: color(muted);
+    stroke-width: size(0.5);
+  }
+
+  &__foreground-circle {
+    stroke: color(primary);
+    transform: rotate(-75deg);
+    transform-origin: center;
+  }
+
+
+  &__text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    color: color(muted);
+    align-items: center;
+    font-weight: bold;
+  }
+
+  &__rating {
+    margin-right: size(0.25);
+    color: color(primary);
+  }
+}

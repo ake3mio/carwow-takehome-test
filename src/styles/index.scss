@@ -1,0 +1,49 @@
+@import "./mixins";
+@import "./tools";
+@import "./animations";
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: color(black);
+  background: color(white);
+}
+
+.App .Header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.page {
+  padding-top: $header-height;
+}
+
+.container {
+  position: relative;
+  max-width: map_get($breakpoints, xl);
+  margin: 0 auto;
+  width: 100%;
+  padding: size(2) size();
+}
+
+p {
+  line-height: size(1.5);
+  font-size: size();
+}
+
+hr  {
+  border: 0.5px solid color(light);
+  margin: 16px 0;
+}
