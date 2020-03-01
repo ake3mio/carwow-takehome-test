@@ -1,5 +1,5 @@
 {
-  "name": "carwow-takehome-test",
+  "name": "akeem-carwow-takehome-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,13 +18,11 @@
     "route-parser": "0.0.5",
     "typescript": "^3.7.5"
   },
-  "homepage": "https://ake3mio.github.io/carwow-takehome-test/",
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
